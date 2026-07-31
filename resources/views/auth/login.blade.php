@@ -3,11 +3,11 @@
 @section('subtitle', __('auth.customer_login_subtitle'))
 
 @section('content')
-<div class="text-center mb-3">
+{{-- <div class="text-center mb-3">
     <span class="badge bg-success" style="font-size: 0.85rem; padding: 6px 15px; border-radius: 50px;">
         <i class="fas fa-user"></i> {{ __('auth.customer_area') }}
     </span>
-</div>
+</div> --}}
 
 <form method="POST" action="{{ route('login') }}">
     @csrf
@@ -53,7 +53,7 @@
     {{ __('auth.no_account') }}
     <a href="{{ route('register') }}">{{ __('auth.register_now') }}</a>
 </div>
-
+{{--
 <div class="text-center mt-3">
     <small class="text-muted">
         <i class="fas fa-info-circle"></i>
@@ -62,5 +62,5 @@
             {{ __('auth.admin_login_link') }}
         </a>
     </small>
-</div>
+</div> --}}
 @endsection
