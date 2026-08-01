@@ -105,13 +105,16 @@ class ProductService
      */
     public function delete(Product $product): bool
     {
-        // حذف الصورة الرئيسية
+        // 1. حذف الصورة الرئيسية
         $this->deleteImage($product->getRawOriginal('image'));
 
-        // حذف صور المعرض
+        // 2. حذف صور المعرض بأمان (فك تشفير JSON إلى Array)
         $gallery = json_decode($product->getRawOriginal('gallery'), true) ?? [];
-        foreach ($gallery as $img) {
-            $this->deleteImage($img);
+
+        if (is_array($gallery)) {
+            foreach ($gallery as $img) {
+                $this->deleteImage($img);
+            }
         }
 
         return $product->delete();

@@ -3,6 +3,14 @@
 @section('page-title', __('admin.categories'))
 
 @section('content')
+
+{{-- ✅ هذا الجزء مهم لعرض رسائل الخطأ --}}
+@if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show">
+        <i class="fas fa-exclamation-triangle"></i> {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
 <div class="card-custom">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="mb-0"><i class="fas fa-folder"></i> {{ __('admin.categories') }}</h4>
