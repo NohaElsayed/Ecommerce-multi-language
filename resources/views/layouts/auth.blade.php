@@ -290,7 +290,7 @@
             <div class="icon">
                 <i class="fas fa-store"></i>
             </div>
-            <h2>{{ config('app.name') }}</h2>
+            {{-- <h2>{{ config('app.name') }}</h2> --}}
             <p>@yield('subtitle')</p>
         </div>
 
